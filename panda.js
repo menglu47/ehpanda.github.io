@@ -109,7 +109,7 @@ var panda_zhcn=(navigator.language && navigator.language=='zh-CN')?true:false;
 var panda_lang_a001=panda_zhcn?'网络错误，是否重试？':'Network error, retry?';
 var panda_lang_a002=panda_zhcn?'输入有误':'Incorrect input';
 var panda_lang_a003=panda_zhcn?'到达边界':'Edge reached';
-var panda_lang_a004=panda_zhcn?'登录才可浏览原图':'Login to view original image';
+var panda_lang_a004=panda_zhcn?'登录才可浏览原图':'Login to view original';
 var panda_lang_p001=panda_zhcn?'范围':'Range';
 var panda_lang_p002=panda_zhcn?'宽度':'Width';
 var panda_lang_p003=panda_zhcn?'原图':'Original';
