@@ -61,7 +61,7 @@ function panda_showfile(numb,hash,adds){
 panda_loadfile(gid,numb,hash,adds,function(info){
 if(!info){return;};
 var file=document.getElementById('panda_file_'+info.numb);
-file.src=document.cookie.match(/panda_orign=true/)?info.full:info.show;
+file.src=document.cookie.match(/panda_origin=true/)?info.full:info.show;
 file.alt=info.adds;
 });
 };
@@ -100,7 +100,7 @@ panda_showlist();
 function panda_plusfunc(){
 var navi=document.getElementsByClassName('gpc')[0].innerHTML.match(/Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images/);
 var code=document.createElement('div');
-code.innerHTML='<div id="panda_plus" class="gm" style="text-align:center;"><h3>'+panda_lang_p001+'&nbsp;<input id="panda_filefrom" style="width:50px;" value="'+navi[1].replace(/,/g,'')+'" />&nbsp;<span id="panda_fileqnty" title="'+navi[3].replace(/,/g,'')+'">-</span>&nbsp;<input id="panda_filefinl" size="3" style="width:50px;" value="'+navi[2].replace(/,/g,'')+'" />&nbsp;&nbsp;'+panda_lang_p002+'&nbsp;<input id="panda_size" style="width:50px;" value="'+panda_width+'" onmouseout="panda_width=parseInt(document.getElementById(\'panda_size\').value);document.cookie=\'panda_width=\'+panda_width+\';path=/;domain=.e-hentai.org\';document.getElementById(\'panda_list\').style.width=panda_width+\'px\';" />&nbsp;&nbsp;'+panda_lang_p003+'&nbsp;<input type="checkbox" '+(document.cookie.match(/panda_orign=true/)?'checked="checked"':'')+' onclick="if(this.checked){alert(\'登录才可浏览原图\');};document.cookie=\'panda_orign=\'+this.checked+\';path=/;domain=.e-hentai.org\';if(document.getElementById(\'panda_list\').innerHTML){panda_showlist();};" /></h3><h3><a id="panda_prev" href="javascript:;" onclick="panda_showprev();" style="text-decoration:none;display:none;">&lt;&lt;&lt;</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="panda_showlist();" style="text-decoration:none;">['+panda_lang_p004+']</a>&nbsp;&nbsp;&nbsp;<a id="panda_next" href="javascript:;" onclick="panda_shownext();" style="text-decoration:none;display:none;">&gt;&gt;&gt;</a></h3></div><div id="panda_list" style="margin:10px auto;width:'+panda_width+'px;max-width:100%;"></div><div id="panda_dock" class="gm" style="text-align:center;display:none;"><h3><a href="javascript:;" onclick="panda_showprev();" style="text-decoration:none;">&lt;&lt;&lt;</a>&nbsp;&nbsp;&nbsp;<a href="#panda_plus" style="text-decoration:none;">[&nbsp;&#9650;&nbsp;]</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="panda_shownext();" style="text-decoration:none;">&gt;&gt;&gt;</a></h3></div>';
+code.innerHTML='<div id="panda_plus" class="gm" style="text-align:center;"><h3>'+panda_lang_p001+'&nbsp;<input id="panda_filefrom" style="width:50px;" value="'+navi[1].replace(/,/g,'')+'" />&nbsp;<span id="panda_fileqnty" title="'+navi[3].replace(/,/g,'')+'">-</span>&nbsp;<input id="panda_filefinl" size="3" style="width:50px;" value="'+navi[2].replace(/,/g,'')+'" />&nbsp;&nbsp;'+panda_lang_p002+'&nbsp;<input id="panda_size" style="width:50px;" value="'+panda_width+'" onmouseout="panda_width=parseInt(document.getElementById(\'panda_size\').value);document.cookie=\'panda_width=\'+panda_width+\';path=/;domain=.e-hentai.org\';document.getElementById(\'panda_list\').style.width=panda_width+\'px\';" />&nbsp;&nbsp;'+panda_lang_p003+'&nbsp;<input type="checkbox" '+(document.cookie.match(/panda_origin=true/)?'checked="checked"':'')+' onclick="if(this.checked){alert(\'登录才可浏览原图\');};document.cookie=\'panda_origin=\'+this.checked+\';path=/;domain=.e-hentai.org\';if(document.getElementById(\'panda_list\').innerHTML){panda_showlist();};" /></h3><h3><a id="panda_prev" href="javascript:;" onclick="panda_showprev();" style="text-decoration:none;display:none;">&lt;&lt;&lt;</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="panda_showlist();" style="text-decoration:none;">['+panda_lang_p004+']</a>&nbsp;&nbsp;&nbsp;<a id="panda_next" href="javascript:;" onclick="panda_shownext();" style="text-decoration:none;display:none;">&gt;&gt;&gt;</a></h3></div><div id="panda_list" style="margin:10px auto;width:'+panda_width+'px;max-width:100%;"></div><div id="panda_dock" class="gm" style="text-align:center;display:none;"><h3><a href="javascript:;" onclick="panda_showprev();" style="text-decoration:none;">&lt;&lt;&lt;</a>&nbsp;&nbsp;&nbsp;<a href="#panda_plus" style="text-decoration:none;">[&nbsp;&#9650;&nbsp;]</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="panda_shownext();" style="text-decoration:none;">&gt;&gt;&gt;</a></h3></div>';
 var gtbn=document.getElementById('cdiv');
 gtbn.parentNode.insertBefore(code,gtbn);
 };
@@ -109,6 +109,7 @@ var panda_zhcn=(navigator.language && navigator.language=='zh-CN')?true:false;
 var panda_lang_a001=panda_zhcn?'网络错误，是否重试？':'Network error, retry?';
 var panda_lang_a002=panda_zhcn?'输入有误':'Incorrect input';
 var panda_lang_a003=panda_zhcn?'到达边界':'Edge reached';
+var panda_lang_a004=panda_zhcn?'登录才可浏览原图':'Login to view original image';
 var panda_lang_p001=panda_zhcn?'范围':'Range';
 var panda_lang_p002=panda_zhcn?'宽度':'Width';
 var panda_lang_p003=panda_zhcn?'原图':'Original';
